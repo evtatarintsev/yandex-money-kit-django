@@ -85,7 +85,7 @@ class BasePaymentForm(forms.Form):
             cd['shopId'],
             cd['invoiceId'],
             cd['customerNumber'],
-            settings.YANDEX_MONEY_SHOP_PASSWORD,
+            settings.YANDEX_MONEY_SHOP_PASSWORD.encode('utf8'),
         )))).hexdigest().upper()
 
     @classmethod
